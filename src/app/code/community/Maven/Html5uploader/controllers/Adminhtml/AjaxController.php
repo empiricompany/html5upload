@@ -1,6 +1,11 @@
 <?php
 class Maven_Html5uploader_Adminhtml_AjaxController extends Mage_Adminhtml_Controller_Action
 {
+    protected function _isAllowed()
+    {
+        return true;
+    }
+
     public function uploadAction()
     {
         try {

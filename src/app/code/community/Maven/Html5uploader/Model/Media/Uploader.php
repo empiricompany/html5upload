@@ -120,7 +120,7 @@ class Maven_Html5uploader_Model_Media_Uploader
     public function checkMimeType($validTypes = array())
     {
         try {
-            if (count($validTypes) > 0) {
+            if ($validTypes && count($validTypes) > 0) {
                 $validator = new Zend_Validate_File_MimeType($validTypes);
                 return $validator->isValid($this->_fileName);
             }

@@ -27,10 +27,10 @@
 
 <div class="maven_html5upload">
     <form id="upload"
-          action="<?php echo Mage::getModel('adminhtml/url')->addSessionParam()->getUrl('adminhtml/ajax/upload' ,array('form_key' => Mage::getSingleton('core/session')->getFormKey()));?>"
+          action="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/ajax/upload' ,array('form_key' => Mage::getSingleton('core/session')->getFormKey()));?>"
           method="POST"
           enctype="multipart/form-data"
-          data-remove-action="<?php echo Mage::getModel('adminhtml/url')->addSessionParam()->getUrl('adminhtml/ajax/remove' ,array('form_key' => Mage::getSingleton('core/session')->getFormKey()));?>"
+          data-remove-action="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/ajax/remove' ,array('form_key' => Mage::getSingleton('core/session')->getFormKey()));?>"
     >
         <fieldset>
             <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="<?php echo $this->getMaxFileSize(); ?>" />
