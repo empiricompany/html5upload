@@ -1,6 +1,6 @@
-Replace default upload image of Magento site
+Replace default upload image in OpenMage with a multiple drag&drop file upload.
 
-Install: modman clone https://github.com/anhuy1989/html5upload.git
+Install: modman clone https://github.com/empiricompany/html5upload.git
 
 Enable in backend: System/Configuration/Html5 uploader/
 
