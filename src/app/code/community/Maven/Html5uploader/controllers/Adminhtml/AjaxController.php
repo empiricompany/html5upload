@@ -10,7 +10,7 @@ class Maven_Html5uploader_Adminhtml_AjaxController extends Mage_Adminhtml_Contro
     {
         try {
             $uploader = new Maven_Html5uploader_Model_Media_Uploader();
-            $uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'));
+            $uploader->setAllowedExtensions(array('jpg','jpeg','gif','png','webp'));
             $uploader->setAllowRenameFiles(true);
             $uploader->setAllowCreateFolders(true);
             $uploader->setFilesDispersion(true);
