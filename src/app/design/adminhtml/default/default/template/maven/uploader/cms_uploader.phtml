@@ -28,10 +28,10 @@
 
 <div class="maven_html5upload">
     <form id="upload"
-          action="<?php echo Mage::getModel('adminhtml/url')->addSessionParam()->getUrl('adminhtml/ajax/cmsupload' ,array('form_key' => Mage::getSingleton('core/session')->getFormKey()));?>"
+          action="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/ajax/cmsupload' ,array('form_key' => Mage::getSingleton('core/session')->getFormKey()));?>"
           method="POST"
           enctype="multipart/form-data"
-          data-remove-action="<?php echo Mage::getModel('adminhtml/url')->addSessionParam()->getUrl('adminhtml/ajax/remove' ,array('form_key' => Mage::getSingleton('core/session')->getFormKey()));?>"
+          data-remove-action="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/ajax/remove' ,array('form_key' => Mage::getSingleton('core/session')->getFormKey()));?>"
     >
         <fieldset>
             <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="<?php echo $this->getMaxFileSize(); ?>" />
@@ -55,13 +55,8 @@
     </div>
     <script type="text/javascript">
         //<![CDATA[
-        <?php $magentoVersion = Mage::getVersion(); ?>
-        <?php $patch8788NotApplied = Mage::helper('maven_html5uploader')->ifPatch8788NotAppied($this); ?>
-        <?php if (version_compare($magentoVersion, '1.9.3', '>=') || !$patch8788NotApplied): ?>
-            var uploader = new JsUploader('<?php echo $this->getHtmlId() ?>', <?php echo $this->getJsonConfig() ?>);
-        <?php else: ?>
-            <?php echo $this->getJsObjectName() ?> = new JsUploader('<?php echo $this->getHtmlId() ?>', <?php echo $this->getConfigJson() ?>);
-        <?php endif; ?>
+
+        var uploader = new JsUploader('<?php echo $this->getHtmlId() ?>', <?php echo $this->getJsonConfig() ?>);
         (function() {
             // call initialization file
             if (window.File && window.FileList && window.FileReader) {
